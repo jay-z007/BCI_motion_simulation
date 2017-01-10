@@ -11,7 +11,7 @@ data = []
 target = []
 trig = []
 
-db6 = pywt.Wavelet('db20')
+db20 = pywt.Wavelet('db20')
 
 coeffs = []
 new_coeffs = []
@@ -23,7 +23,7 @@ coeffs_to_extract = [['a',6], ['d', 6], ['d', 5], ['d', 4], ['d', 3]]
 
 
 def get_name(n, case):
-	prefix = "./dataset/dataset3.3a/set"
+	prefix = "../dataset/dataset3.3a/set"
 	suffix = ""
 	
 	if case == 1:
@@ -90,7 +90,7 @@ def plotSpectrum(y,Fs,color):
 #	show()
 
 def extract_features(wave):
-	return np.nanmean(wave), np.nanstd(wave), np.nanmin(wave), np.nanmax(wave)
+	return [np.nanmean(wave), np.nanstd(wave), np.nanmin(wave), np.nanmax(wave)]
 	#return feature_vector
 
 fname_data = get_name(3, 1)
@@ -98,7 +98,6 @@ fname_target = get_name(3, 2)
 fname_trail_trig = get_name(3, 3)
 data_temp = []
 features = []
-
 # for i in range(1):
 counter = 0
 try:
@@ -112,21 +111,6 @@ try:
 		while True:
 			counter += 1
 
-			if trig_flag and counter == int(trig_line):	
-				target_line = target_file.readline()
-				trig_line = fname_trail_trig.readline()
-				if target_line == "NaN\n":
-					continue
-				elif trig_line == "" and trig_flag:
-					print "\nTrig file end\n"
-					trig_flag = False
-				else:
-					#print target_line, trig_line
-					target.append(int(target_line))
-					trig.append(int(trig_line))			
-					data.append(data_temp)
-				data_temp = []
-
 			data_line = data_file.readline()
 
 			if data_line == "" and data_flag:
@@ -139,8 +123,25 @@ try:
 			arr = data_line.split()
 			for j in range(len(arr)):
 				arr[j] = float(arr[j])
-			
 			data_temp.append(arr)
+
+			if trig_flag and counter == int(trig_line):	
+				
+				target_line = target_file.readline()
+				trig_line = fname_trail_trig.readline()
+
+				if target_line == "NaN\n":
+					pass
+				elif trig_line == "" and trig_flag:
+					print "\nTrig file end\n"
+					trig_flag = False
+				else:
+					target.append(int(target_line))
+					trig.append(int(trig_line))			
+					data.append(data_temp)
+				data_temp = []
+
+
 			
 except IOError as e:
 	print 'Operation failed: %s' % e.strerror
@@ -148,39 +149,31 @@ except IOError as e:
 counter_data = 0 
 counter_new_matrix = 0 
 counter_wave2 = 0 
+# print len(data)
 
-for matrix in data[:20]:
+
+for matrix in data:
 	counter_data += 1
-	print counter_data
-	# new_matrx = np.transpose(matrix)
-	new_matrx = np.zeros(33, len(matrix))
+	# print counter_data
+	new_matrx = np.transpose(matrix)
 	
-	for i in range(len(matrix)):
-		for j in range(len(matrix[i])):
-			new_matrx[i][j]=matrix[j][i]
-		# new_matrx[][]
 	counter_new_matrix = 0
 	temp_features = []
 		
 	for new_matrix in new_matrx:
 		counter_new_matrix += 1
 		#print 'length of new_matrix',len(new_matrix)
-		coeffs = pywt.wavedec(new_matrix, db6)
+		coeffs = pywt.wavedec(new_matrix, db20)
 		new_coeffs = []
 		wave2 = []
 		for row in coeffs_to_extract:
 			row = [row]
 			new_coeffs.append(extract_coeffs(coeffs, row))
 		for row in new_coeffs:
-			wave2.append(pywt.waverec(row, db6))
+			wave2.append(pywt.waverec(row, db20))
 		counter_wave2 = 0
 		#print 'len of wave2',len(wave2)
 		for row in wave2:
 			counter_wave2 += 1
-			# print temp , counter_data , counter_new_matrix, counter_wave2
-			temp_features.append(extract_features(row))
-		
+			temp_features.extend(extract_features(row))
 	features.append(temp_features)
-
-# for f in features:
-# 	print len(f)
