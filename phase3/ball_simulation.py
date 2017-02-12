@@ -13,4 +13,7 @@ class Ball:
     def move_ball(self, deltax):
         deltay = 0
         self.canvas.move(self.ball, deltax, deltay)
-        print "pos : (",self.x1, ",", self.y1, ")"
+        pos = self.canvas.coords(self.ball)
+        print [x+25 for x in pos[0:2]]
+
+

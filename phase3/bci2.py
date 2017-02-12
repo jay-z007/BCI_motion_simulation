@@ -38,18 +38,18 @@ predictions = my_classifier.predict(X_test)
 root = Tk()
 root.title("Balls")
 root.resizable(False,False)
-canvas = Canvas(root, width = 500, height = 500)
+canvas = Canvas(root, width = 700, height = 700)
 canvas.pack()
 
 # create two ball objects and animate them
-ball1 = ball_simulation.Ball(canvas, 100, 100, 150, 150)
+ball1 = ball_simulation.Ball(canvas, 300, 300, 350, 350)
 
 for i in range(len(Y_test)):
 	root.update()
 	print predictions[i], Y_test[i], (predictions[i]-0.5)*10
 
 	ball1.move_ball((predictions[i]-0.5)*50)
-	time.sleep(.500)
+	time.sleep(.200)
 
 	#root.mainloop()
 

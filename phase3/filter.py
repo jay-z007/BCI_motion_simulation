@@ -5,8 +5,8 @@ from scipy import signal
 from helperFunctions import *
 
 root_dir = os.path.abspath('./')
-data_dir = os.path.join(root_dir, '../dataset', 'dataset3.5', 'subject1_ascii')
-files = ['train_subject1_raw01.asc', 'train_subject1_raw02.asc', 'train_subject1_raw03.asc']
+data_dir = os.path.join(root_dir, '../dataset', 'dataset3.5', 'subject2_ascii')
+files = ['train_subject2_raw01.asc', 'train_subject2_raw02.asc', 'train_subject2_raw03.asc']
 
 fs_Hz = 512.0   # assumed sample rate for the EEG data
 NFFT = 512      # pick the length of the fft
