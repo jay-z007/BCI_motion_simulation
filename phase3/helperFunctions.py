@@ -42,6 +42,7 @@ def loadData(full_fname, fs_Hz):
     target = []
     fname_data = full_fname
     counter = 0
+    
     with open(fname_data) as data_file:
         while True:
 
@@ -49,26 +50,27 @@ def loadData(full_fname, fs_Hz):
             if line == "":
                 break
             arr = line.split()
-            if arr[-1] == "7.0000000e+000":
-                continue
+            # if arr[-1] == "7.0000000e+000":
+            #     continue
             counter += 1
 
-            for i in range(len(laplace_array)):
-                one = laplace_array[i][0]
-                two = laplace_array[i][1]
-                three = laplace_array[i][2]
-                four = laplace_array[i][3]
-                five = laplace_array[i][4]
+            for i in range(len(arr)-1):
+                #one = laplace_array[i][0]
+                # two = laplace_array[i][1]
+                # three = laplace_array[i][2]
+                # four = laplace_array[i][3]
+                # five = laplace_array[i][4]
+                temp = float(arr[i])
                 
-                temp = 4*float(arr[one])-float(arr[two])-float(arr[three])-float(arr[four])-float(arr[five]) 
+                #temp = 4*float(arr[one])-float(arr[two])-float(arr[three])-float(arr[four])-float(arr[five]) 
                 arry.append(temp)
             
             data.append(arry)
 
             arry = []
-            if counter == 512:
-                target.append(float(arr[-1])-2.0)
-                counter = 0
+            # if counter == 512:
+            target.append(float(arr[-1])-2.0)
+            # counter = 0
             
     # # print '*******',len(data)
     return data,target
@@ -117,4 +119,3 @@ def convertToFreqDomain(f_eeg_data_uV, fs_Hz, NFFT, overlap):
     del spec_PSDperHz  # remove this variable so that I don't mistakenly use it
     
     return spec_PSDperBin, t_spec, freqs
-
