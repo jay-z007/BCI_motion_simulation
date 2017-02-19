@@ -42,7 +42,7 @@ def loadData(full_fname, fs_Hz):
     target = []
     fname_data = full_fname
     counter = 0
-    
+
     with open(fname_data) as data_file:
         while True:
 
@@ -54,13 +54,13 @@ def loadData(full_fname, fs_Hz):
             #     continue
             counter += 1
 
-            for i in range(len(arr)-1):
-                #one = laplace_array[i][0]
+            for i in range(len(laplace_array)):
+                one = laplace_array[i][0]
                 # two = laplace_array[i][1]
                 # three = laplace_array[i][2]
                 # four = laplace_array[i][3]
                 # five = laplace_array[i][4]
-                temp = float(arr[i])
+                temp = float(arr[one])
                 
                 #temp = 4*float(arr[one])-float(arr[two])-float(arr[three])-float(arr[four])-float(arr[five]) 
                 arry.append(temp)
@@ -77,6 +77,11 @@ def loadData(full_fname, fs_Hz):
     #data = np.transpose(data[0:512])
 
 def butter_bandpass_filter(data, highcut, fs_Hz, passlh, order=5):
+    # hp_cutoff_Hz = 1.0
+    # b, a = signal.butter(2, hp_cutoff_Hz/(fs_Hz / 2.0), 'highpass')  # define the filter
+    # f_eeg_data_uV = signal.lfilter(b, a, data, 0) # apply along the zeroeth dimension
+
+
     nyq = 0.5 * fs_Hz
     high = highcut / nyq
     b, a = signal.butter(order, high, btype=passlh)

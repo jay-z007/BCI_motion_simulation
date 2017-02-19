@@ -43,7 +43,7 @@ my_classifier = MLPClassifier(hidden_layer_sizes=(20), activation='logistic', al
 # from sklearn import tree
 # my_classifier = tree.DecisionTreeClassifier()
 
-for i in range(300):
+for i in range(200):
 	print i
 	my_classifier.fit(X_train, Y_train)
 

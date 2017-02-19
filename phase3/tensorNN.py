@@ -49,7 +49,7 @@ def batch_creator(batch_size, dataset_length, dataset_name):
 seed = 128
 rng = np.random.RandomState(seed)
 
-root_dir = os.path.abspath('./')
+root_dir = os.path.abspath('../')
 data_dir = os.path.join(root_dir, 'dataset', 'dataset3.5', 'data_psd')
 #sub_dir = os.path.join(root_dir, 'sub')
 
@@ -70,6 +70,10 @@ print 'data_dir -', os.path.exists(data_dir)
 train_x = pd.DataFrame(filter.data).as_matrix()
 train_y = dense_to_one_hot (pd.DataFrame(filter.target).as_matrix().flatten())
 
+from sklearn.decomposition import PCA
+pca = PCA(n_components=8)
+train_x = pca.fit_transform(train_x)
+
 #split into train and validation sets
 split_size = int(train_x.shape[0]*0.80)
 train_x, val_x = train_x[:split_size], train_x[split_size:]
@@ -85,8 +89,8 @@ print "\n\n",val_y
 ### set all variables
 
 # number of neurons in each layer
-input_num_units = 96
-hidden_num_units = 60
+input_num_units = 8
+hidden_num_units = 20
 output_num_units = 2
 
 # ###############################################
@@ -117,68 +121,68 @@ output_num_units = 2
 
 
 
-# # define placeholders
-# x = tf.placeholder(tf.float32, [None, input_num_units])
-# y = tf.placeholder(tf.float32, [None, output_num_units])
+# define placeholders
+x = tf.placeholder(tf.float32, [None, input_num_units])
+y = tf.placeholder(tf.float32, [None, output_num_units])
 
-# # set remaining variables
-# epochs = 300
-# batch_size = 128
-# learning_rate = 0.0001
-
-
-# ### define weights and biases of the neural network
-
-# weights = {
-# 	'hidden': tf.Variable(tf.random_normal([input_num_units, hidden_num_units], seed=seed)),
-# 	'output': tf.Variable(tf.random_normal([hidden_num_units, output_num_units], seed=seed))
-# }
-
-# biases = {
-# 	'hidden': tf.Variable(tf.random_normal([hidden_num_units], seed=seed)),
-# 	'output': tf.Variable(tf.random_normal([output_num_units], seed=seed))
-# }
-
-# hidden_layer = tf.add(tf.matmul(x, weights['hidden']), biases['hidden'])
-# hidden_layer = tf.nn.sigmoid(hidden_layer)
-
-# output_layer = tf.matmul(hidden_layer, weights['output']) + biases['output']
-
-# cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output_layer, y))
-# optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
-
-# init = tf.global_variables_initializer()
-
-# #with tf.Session() as sess:
-# sess = tf.Session()
-# # create initialized variables
-# sess.run(init)
-
-# ### for each epoch, do:
-# ###   for each batch, do:
-# 	### create pre-processed batch
-# 	### run optimizer by feeding batch
-# 	### find cost and reiterate to minimize
-
-# for epoch in range(epochs):
-# # avg_cost = 0
-# # total_batch = int(train.shape[0]/batch_size)
-# 	sess.run(optimizer, feed_dict = {x: train_x.reshape(-1, 96), y: train_y})
-
-# #avg_cost += c / total_batch
-#  #   print "Epoch:", (epoch+1), "cost =", "{:.5f}".format(avg_cost)
-
-# print "\nTraining complete!"
+# set remaining variables
+epochs = 300
+batch_size = 128
+learning_rate = 0.0001
 
 
-# # find predictions on val set
-# pred_temp = tf.equal(tf.argmax(output_layer, 1), tf.argmax(y, 1))
-# accuracy = tf.reduce_mean(tf.cast(pred_temp, tf.float32))
+### define weights and biases of the neural network
 
-# print "Validation Accuracy:", sess.run(accuracy, feed_dict={x: val_x.reshape(-1, 96), y: val_y})
+weights = {
+	'hidden': tf.Variable(tf.random_normal([input_num_units, hidden_num_units], seed=seed)),
+	'output': tf.Variable(tf.random_normal([hidden_num_units, output_num_units], seed=seed))
+}
+
+biases = {
+	'hidden': tf.Variable(tf.random_normal([hidden_num_units], seed=seed)),
+	'output': tf.Variable(tf.random_normal([output_num_units], seed=seed))
+}
+
+hidden_layer = tf.add(tf.matmul(x, weights['hidden']), biases['hidden'])
+hidden_layer = tf.nn.sigmoid(hidden_layer)
+
+output_layer = tf.matmul(hidden_layer, weights['output']) + biases['output']
+
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(output_layer, y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+
+init = tf.global_variables_initializer()
+
+#with tf.Session() as sess:
+sess = tf.Session()
+# create initialized variables
+sess.run(init)
+
+### for each epoch, do:
+###   for each batch, do:
+	### create pre-processed batch
+	### run optimizer by feeding batch
+	### find cost and reiterate to minimize
+
+for epoch in range(epochs):
+# avg_cost = 0
+# total_batch = int(train.shape[0]/batch_size)
+	sess.run(optimizer, feed_dict = {x: train_x.reshape(-1, input_num_units), y: train_y})
+
+#avg_cost += c / total_batch
+ #   print "Epoch:", (epoch+1), "cost =", "{:.5f}".format(avg_cost)
+
+print "\nTraining complete!"
+
+
+# find predictions on val set
+pred_temp = tf.equal(tf.argmax(output_layer, 1), tf.argmax(y, 1))
+accuracy = tf.reduce_mean(tf.cast(pred_temp, tf.float32))
+
+print "Validation Accuracy:", sess.run(accuracy, feed_dict={x: val_x.reshape(-1, input_num_units), y: val_y})
 
 # predict = tf.argmax(output_layer, 1)
-# pred = sess.run(predict, feed_dict={x: test_x.reshape(-1, 96)})
+# pred = sess.run(predict, feed_dict={x: test_x.reshape(-1, input_num_units)})
 
-# print pred
+#print pred
 
