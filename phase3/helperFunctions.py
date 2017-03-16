@@ -41,7 +41,7 @@ def loadData(full_fname, fs_Hz):
     arry = []
     target = []
     fname_data = full_fname
-    counter = 0
+    #counter = 0
 
     with open(fname_data) as data_file:
         while True:
@@ -52,7 +52,7 @@ def loadData(full_fname, fs_Hz):
             arr = line.split()
             # if arr[-1] == "7.0000000e+000":
             #     continue
-            counter += 1
+            #counter += 1
 
             for i in range(len(laplace_array)):
                 one = laplace_array[i][0]

@@ -19,8 +19,8 @@ X = scale(X)
 #print '*******************************************************',X[0],'****************************************************'
 from sklearn.decomposition import PCA
 pca = PCA(n_components=8)
-pca.fit(X)
-X = pca.transform(X)
+
+X = pca.fit_transform(X)
 # print '///////////////////////',X[0],'//////////////////////'
 # print '/////',len(X)
 # print '*****',len(X[0])

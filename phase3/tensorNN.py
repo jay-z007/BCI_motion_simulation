@@ -73,6 +73,8 @@ train_y = dense_to_one_hot (pd.DataFrame(filter.target).as_matrix().flatten())
 from sklearn.decomposition import PCA
 pca = PCA(n_components=8)
 train_x = pca.fit_transform(train_x)
+print "\n Components ", pca.components_
+print "\n EV ",pca.explained_variance_
 
 #split into train and validation sets
 split_size = int(train_x.shape[0]*0.80)
