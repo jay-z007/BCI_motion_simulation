@@ -10,18 +10,17 @@ data_dir = os.path.join(root_dir, '../dataset', 'dataset3.5')
 
 files = [
 'subject1_ascii/train_subject1_raw1.asc'
- , 'subject1_ascii/train_subject1_raw2.asc'
+  , 'subject1_ascii/train_subject1_raw2.asc'
  # , 'subject1_ascii/train_subject1_raw3.asc'
 
-# , 'subject3_ascii/train_subject3_raw1.asc'
-#  , 'subject3_ascii/train_subject3_raw2.asc'
-#  , 'subject3_ascii/train_subject3_raw3.asc'
-
- , 'subject2_ascii/train_subject2_raw1.asc'
- , 'subject2_ascii/train_subject2_raw2.asc'
+  , 'subject2_ascii/train_subject2_raw1.asc'
+ #, 'subject2_ascii/train_subject2_raw2.asc'
  # , 'subject2_ascii/train_subject2_raw3.asc'
 
- ]
+  , 'subject3_ascii/train_subject3_raw1.asc'
+ # , 'subject3_ascii/train_subject3_raw2.asc'
+ # , 'subject3_ascii/train_subject3_raw3.asc'
+]
 
 fs_Hz = 512.0   # assumed sample rate for the EEG data
 # NFFT = 512      # pick the length of the fft
@@ -51,15 +50,14 @@ data = eeg_data_uV
 counter = 0
 count = 0
 
+print len(data), len(data[0])
+
 for i in range(len(data)/section_size):
 	data_part = np.array(data[i*section_size:(i+1)*section_size])
 # data = np.transpose(data)
 # for i in range()
-	# print "/*****************************\n",data_part[0][0],data_part[1][0]
 	count +=1
-
 	data_part = data_part.T
-	# print data_part[0][0],data_part[0][1],"\n-*******************************"
 	# new_target = target[i*8]
 # print len(data)
 # for row in data[0]:
@@ -67,55 +65,30 @@ for i in range(len(data)/section_size):
 
 	# print count
 	for row in range(len(data_part)):
-		# counter += 1
+		counter += 1
 		#plt.plot(data[row], 'r')
-		# f, pxx = signal.welch(data_part[row], fs_Hz, nperseg=512)
-		
-		# plt.xlabel(counter)
-		# plt.plot(f, pxx,'g')
-		
 
+#		f, pxx = signal.welch(data_part[row], fs_Hz, nperseg=512)
 
-		data_part[row] = butter_bandpass_filter(data_part[row], 8, 30,fs_Hz)
+#		plt.plot(f, pxx, 'r')
+
+		data_part[row] = butter_bandpass_filter(data_part[row], 8, 30,fs_Hz,'band')
 
 		f, pxx = signal.welch(data_part[row], fs_Hz, nperseg=64)
-		# if counter == 1:
-		# 	print pxx
 
-		# plt.xlabel(counter)
-		# plt.plot(f, pxx,'r')
-		# eeg_temp.extend([np.average(pxx)])
-		# plt.show()
+#		plt.plot(f, pxx, 'g')
+#		plt.show()
+		
 		eeg_temp.extend(pxx[8:31])
-
-	# if count == 1:
-	# 	print count,counter,"eeg",eeg_temp, len(eeg_temp)
-	# print "eegtemp",len(eeg_temp)
+		#data_part = data_part.T
+	#new_data.append(eeg_temp)
 	new_data.append(eeg_temp)
 	eeg_temp = []
-	# if count == 000:
-	# 	break
 
-	#plt.plot(data[row])
-	#plt.xlim(0,450000)
-	#plt.ylim()
-	#data[row] = butter_bandpass_filter(data[row], 30, fs_Hz,'low')
-	# plt.show();
-#	f, pxx = signal.welch(data[row], fs_Hz, nperseg=512)
-
-# 	#pxx_res_2 = pxx[8:31:2]
-# 	# pxx_temp.extend(pxx_res_2)
-
-#	print counter,i
-	# plt.xlabel(counter)
-	# plt.plot(f, pxx,'r')
-	# plt.ylim([0,100])
-	#plt.show()
-	
-	# data.append(pxx_temp)	
-	# pxx_temp = []
+# print new_data
 data = new_data
-# print "len of data",len(data)
+
+print len(data), len(data[0])
 # target = new_target
 # print "length of data",len(data), "target",len(target)
 # print "counter",counter

@@ -1,0 +1,908 @@
+counter 32
+check for existence
+root_dir - True
+data_dir - True
+Training start
+
+Epoch :  0
+cost :  [None, 0.0084847584]
+
+Epoch :  1
+cost :  [None, 0.0084334528]
+
+Epoch :  2
+cost :  [None, 0.0083824685]
+
+Epoch :  3
+cost :  [None, 0.0083318027]
+
+Epoch :  4
+cost :  [None, 0.0082814628]
+
+Epoch :  5
+cost :  [None, 0.0082314862]
+
+Epoch :  6
+cost :  [None, 0.0081817992]
+
+Epoch :  7
+cost :  [None, 0.0081324745]
+
+Epoch :  8
+cost :  [None, 0.0080834832]
+
+Epoch :  9
+cost :  [None, 0.0080348412]
+
+Epoch :  10
+cost :  [None, 0.0079865307]
+
+Epoch :  11
+cost :  [None, 0.0079385797]
+
+Epoch :  12
+cost :  [None, 0.0078909425]
+
+Epoch :  13
+cost :  [None, 0.0078436965]
+
+Epoch :  14
+cost :  [None, 0.0077967849]
+
+Epoch :  15
+cost :  [None, 0.0077502313]
+
+Epoch :  16
+cost :  [None, 0.0077040344]
+
+Epoch :  17
+cost :  [None, 0.0076581971]
+
+Epoch :  18
+cost :  [None, 0.0076127183]
+
+Epoch :  19
+cost :  [None, 0.0075675775]
+
+Epoch :  20
+cost :  [None, 0.0075228051]
+
+Epoch :  21
+cost :  [None, 0.0074783796]
+
+Epoch :  22
+cost :  [None, 0.0074343146]
+
+Epoch :  23
+cost :  [None, 0.007390629]
+
+Epoch :  24
+cost :  [None, 0.0073472802]
+
+Epoch :  25
+cost :  [None, 0.0073042777]
+
+Epoch :  26
+cost :  [None, 0.0072616301]
+
+Epoch :  27
+cost :  [None, 0.0072193234]
+
+Epoch :  28
+cost :  [None, 0.0071773995]
+
+Epoch :  29
+cost :  [None, 0.0071357745]
+
+Epoch :  30
+cost :  [None, 0.0070945388]
+
+Epoch :  31
+cost :  [None, 0.007053629]
+
+Epoch :  32
+cost :  [None, 0.0070130778]
+
+Epoch :  33
+cost :  [None, 0.0069728396]
+
+Epoch :  34
+cost :  [None, 0.0069329543]
+
+Epoch :  35
+cost :  [None, 0.0068934094]
+
+Epoch :  36
+cost :  [None, 0.006854211]
+
+Epoch :  37
+cost :  [None, 0.0068153301]
+
+Epoch :  38
+cost :  [None, 0.0067767794]
+
+Epoch :  39
+cost :  [None, 0.0067385617]
+
+Epoch :  40
+cost :  [None, 0.0067006559]
+
+Epoch :  41
+cost :  [None, 0.0066630705]
+
+Epoch :  42
+cost :  [None, 0.006625799]
+
+Epoch :  43
+cost :  [None, 0.0065888478]
+
+Epoch :  44
+cost :  [None, 0.0065522259]
+
+Epoch :  45
+cost :  [None, 0.006515902]
+
+Epoch :  46
+cost :  [None, 0.0064798854]
+
+Epoch :  47
+cost :  [None, 0.0064441767]
+
+Epoch :  48
+cost :  [None, 0.0064087757]
+
+Epoch :  49
+cost :  [None, 0.0063736574]
+
+Epoch :  50
+cost :  [None, 0.0063388692]
+
+Epoch :  51
+cost :  [None, 0.0063043488]
+
+Epoch :  52
+cost :  [None, 0.0062701213]
+
+Epoch :  53
+cost :  [None, 0.0062361881]
+
+Epoch :  54
+cost :  [None, 0.0062025338]
+
+Epoch :  55
+cost :  [None, 0.0061691501]
+
+Epoch :  56
+cost :  [None, 0.0061360546]
+
+Epoch :  57
+cost :  [None, 0.0061032311]
+
+Epoch :  58
+cost :  [None, 0.0060707056]
+
+Epoch :  59
+cost :  [None, 0.0060384125]
+
+Epoch :  60
+cost :  [None, 0.0060064117]
+
+Epoch :  61
+cost :  [None, 0.0059746755]
+
+Epoch :  62
+cost :  [None, 0.0059432033]
+
+Epoch :  63
+cost :  [None, 0.0059119752]
+
+Epoch :  64
+cost :  [None, 0.0058810157]
+
+Epoch :  65
+cost :  [None, 0.0058503072]
+
+Epoch :  66
+cost :  [None, 0.0058198594]
+
+Epoch :  67
+cost :  [None, 0.0057896357]
+
+Epoch :  68
+cost :  [None, 0.0057596713]
+
+Epoch :  69
+cost :  [None, 0.0057299347]
+
+Epoch :  70
+cost :  [None, 0.0057004499]
+
+Epoch :  71
+cost :  [None, 0.0056711975]
+
+Epoch :  72
+cost :  [None, 0.0056421817]
+
+Epoch :  73
+cost :  [None, 0.0056133857]
+
+Epoch :  74
+cost :  [None, 0.0055848355]
+
+Epoch :  75
+cost :  [None, 0.005556514]
+
+Epoch :  76
+cost :  [None, 0.0055284062]
+
+Epoch :  77
+cost :  [None, 0.005500529]
+
+Epoch :  78
+cost :  [None, 0.0054728566]
+
+Epoch :  79
+cost :  [None, 0.0054454156]
+
+Epoch :  80
+cost :  [None, 0.0054181884]
+
+Epoch :  81
+cost :  [None, 0.0053911838]
+
+Epoch :  82
+cost :  [None, 0.0053643696]
+
+Epoch :  83
+cost :  [None, 0.0053377599]
+
+Epoch :  84
+cost :  [None, 0.0053113489]
+
+Epoch :  85
+cost :  [None, 0.0052851345]
+
+Epoch :  86
+cost :  [None, 0.0052591483]
+
+Epoch :  87
+cost :  [None, 0.0052333269]
+
+Epoch :  88
+cost :  [None, 0.005207689]
+
+Epoch :  89
+cost :  [None, 0.0051822709]
+
+Epoch :  90
+cost :  [None, 0.005157026]
+
+Epoch :  91
+cost :  [None, 0.0051319567]
+
+Epoch :  92
+cost :  [None, 0.0051070587]
+
+Epoch :  93
+cost :  [None, 0.0050823437]
+
+Epoch :  94
+cost :  [None, 0.0050577936]
+
+Epoch :  95
+cost :  [None, 0.005033419]
+
+Epoch :  96
+cost :  [None, 0.0050092028]
+
+Epoch :  97
+cost :  [None, 0.0049851541]
+
+Epoch :  98
+cost :  [None, 0.0049612811]
+
+Epoch :  99
+cost :  [None, 0.0049375836]
+
+Epoch :  100
+cost :  [None, 0.0049140602]
+
+Epoch :  101
+cost :  [None, 0.004890685]
+
+Epoch :  102
+cost :  [None, 0.0048674922]
+
+Epoch :  103
+cost :  [None, 0.0048444648]
+
+Epoch :  104
+cost :  [None, 0.0048216032]
+
+Epoch :  105
+cost :  [None, 0.0047989162]
+
+Epoch :  106
+cost :  [None, 0.0047763796]
+
+Epoch :  107
+cost :  [None, 0.0047540157]
+
+Epoch :  108
+cost :  [None, 0.0047318228]
+
+Epoch :  109
+cost :  [None, 0.0047097658]
+
+Epoch :  110
+cost :  [None, 0.0046878676]
+
+Epoch :  111
+cost :  [None, 0.0046661235]
+
+Epoch :  112
+cost :  [None, 0.0046445355]
+
+Epoch :  113
+cost :  [None, 0.0046230881]
+
+Epoch :  114
+cost :  [None, 0.0046017691]
+
+Epoch :  115
+cost :  [None, 0.0045805876]
+
+Epoch :  116
+cost :  [None, 0.00455955]
+
+Epoch :  117
+cost :  [None, 0.0045386441]
+
+Epoch :  118
+cost :  [None, 0.00451785]
+
+Epoch :  119
+cost :  [None, 0.0044972049]
+
+Epoch :  120
+cost :  [None, 0.0044766641]
+
+Epoch :  121
+cost :  [None, 0.0044562528]
+
+Epoch :  122
+cost :  [None, 0.004435943]
+
+Epoch :  123
+cost :  [None, 0.004415757]
+
+Epoch :  124
+cost :  [None, 0.0043956707]
+
+Epoch :  125
+cost :  [None, 0.0043756724]
+
+Epoch :  126
+cost :  [None, 0.0043557724]
+
+Epoch :  127
+cost :  [None, 0.0043359525]
+
+Epoch :  128
+cost :  [None, 0.0043162028]
+
+Epoch :  129
+cost :  [None, 0.0042965091]
+
+Epoch :  130
+cost :  [None, 0.0042768605]
+
+Epoch :  131
+cost :  [None, 0.0042572431]
+
+Epoch :  132
+cost :  [None, 0.0042376337]
+
+Epoch :  133
+cost :  [None, 0.0042179995]
+
+Epoch :  134
+cost :  [None, 0.0041983337]
+
+Epoch :  135
+cost :  [None, 0.0041785906]
+
+Epoch :  136
+cost :  [None, 0.004158753]
+
+Epoch :  137
+cost :  [None, 0.0041387952]
+
+Epoch :  138
+cost :  [None, 0.0041186716]
+
+Epoch :  139
+cost :  [None, 0.0040983739]
+
+Epoch :  140
+cost :  [None, 0.0040778853]
+
+Epoch :  141
+cost :  [None, 0.0040571894]
+
+Epoch :  142
+cost :  [None, 0.004036305]
+
+Epoch :  143
+cost :  [None, 0.0040152413]
+
+Epoch :  144
+cost :  [None, 0.0039940393]
+
+Epoch :  145
+cost :  [None, 0.0039727502]
+
+Epoch :  146
+cost :  [None, 0.0039514191]
+
+Epoch :  147
+cost :  [None, 0.0039301054]
+
+Epoch :  148
+cost :  [None, 0.0039088661]
+
+Epoch :  149
+cost :  [None, 0.0038877481]
+
+Epoch :  150
+cost :  [None, 0.0038667899]
+
+Epoch :  151
+cost :  [None, 0.003846046]
+
+Epoch :  152
+cost :  [None, 0.0038255006]
+
+Epoch :  153
+cost :  [None, 0.0038052031]
+
+Epoch :  154
+cost :  [None, 0.0037851776]
+
+Epoch :  155
+cost :  [None, 0.0037654461]
+
+Epoch :  156
+cost :  [None, 0.0037460276]
+
+Epoch :  157
+cost :  [None, 0.0037268875]
+
+Epoch :  158
+cost :  [None, 0.0037080585]
+
+Epoch :  159
+cost :  [None, 0.0036894865]
+
+Epoch :  160
+cost :  [None, 0.0036711309]
+
+Epoch :  161
+cost :  [None, 0.0036529861]
+
+Epoch :  162
+cost :  [None, 0.0036350626]
+
+Epoch :  163
+cost :  [None, 0.0036173433]
+
+Epoch :  164
+cost :  [None, 0.0035998456]
+
+Epoch :  165
+cost :  [None, 0.003582563]
+
+Epoch :  166
+cost :  [None, 0.0035654702]
+
+Epoch :  167
+cost :  [None, 0.0035485434]
+
+Epoch :  168
+cost :  [None, 0.0035317298]
+
+Epoch :  169
+cost :  [None, 0.0035150456]
+
+Epoch :  170
+cost :  [None, 0.0034984821]
+
+Epoch :  171
+cost :  [None, 0.0034820549]
+
+Epoch :  172
+cost :  [None, 0.0034657917]
+
+Epoch :  173
+cost :  [None, 0.0034496621]
+
+Epoch :  174
+cost :  [None, 0.0034336466]
+
+Epoch :  175
+cost :  [None, 0.0034177233]
+
+Epoch :  176
+cost :  [None, 0.0034018774]
+
+Epoch :  177
+cost :  [None, 0.0033861687]
+
+Epoch :  178
+cost :  [None, 0.0033706389]
+
+Epoch :  179
+cost :  [None, 0.0033553576]
+
+Epoch :  180
+cost :  [None, 0.0033403211]
+
+Epoch :  181
+cost :  [None, 0.0033255196]
+
+Epoch :  182
+cost :  [None, 0.0033109346]
+
+Epoch :  183
+cost :  [None, 0.0032965208]
+
+Epoch :  184
+cost :  [None, 0.0032822532]
+
+Epoch :  185
+cost :  [None, 0.0032680884]
+
+Epoch :  186
+cost :  [None, 0.0032540106]
+
+Epoch :  187
+cost :  [None, 0.0032399714]
+
+Epoch :  188
+cost :  [None, 0.0032259105]
+
+Epoch :  189
+cost :  [None, 0.0032117679]
+
+Epoch :  190
+cost :  [None, 0.0031974434]
+
+Epoch :  191
+cost :  [None, 0.0031828189]
+
+Epoch :  192
+cost :  [None, 0.0031677047]
+
+Epoch :  193
+cost :  [None, 0.0031518459]
+
+Epoch :  194
+cost :  [None, 0.0031344728]
+
+Epoch :  195
+cost :  [None, 0.0031132943]
+
+Epoch :  196
+cost :  [None, 0.0030782914]
+
+Epoch :  197
+cost :  [None, 0.0030257164]
+
+Epoch :  198
+cost :  [None, 0.002980354]
+
+Epoch :  199
+cost :  [None, 0.0029484942]
+
+Epoch :  200
+cost :  [None, 0.0029237033]
+
+Epoch :  201
+cost :  [None, 0.0029026885]
+
+Epoch :  202
+cost :  [None, 0.0028844937]
+
+Epoch :  203
+cost :  [None, 0.002867684]
+
+Epoch :  204
+cost :  [None, 0.0028517882]
+
+Epoch :  205
+cost :  [None, 0.0028366712]
+
+Epoch :  206
+cost :  [None, 0.0028222129]
+
+Epoch :  207
+cost :  [None, 0.0028083043]
+
+Epoch :  208
+cost :  [None, 0.002794872]
+
+Epoch :  209
+cost :  [None, 0.0027818475]
+
+Epoch :  210
+cost :  [None, 0.0027691911]
+
+Epoch :  211
+cost :  [None, 0.002756821]
+
+Epoch :  212
+cost :  [None, 0.0027447105]
+
+Epoch :  213
+cost :  [None, 0.0027328383]
+
+Epoch :  214
+cost :  [None, 0.0027211786]
+
+Epoch :  215
+cost :  [None, 0.0027097138]
+
+Epoch :  216
+cost :  [None, 0.0026984168]
+
+Epoch :  217
+cost :  [None, 0.0026872957]
+
+Epoch :  218
+cost :  [None, 0.0026763051]
+
+Epoch :  219
+cost :  [None, 0.0026654471]
+
+Epoch :  220
+cost :  [None, 0.0026547092]
+
+Epoch :  221
+cost :  [None, 0.0026440814]
+
+Epoch :  222
+cost :  [None, 0.0026335486]
+
+Epoch :  223
+cost :  [None, 0.0026231257]
+
+Epoch :  224
+cost :  [None, 0.0026127882]
+
+Epoch :  225
+cost :  [None, 0.0026025474]
+
+Epoch :  226
+cost :  [None, 0.0025923874]
+
+Epoch :  227
+cost :  [None, 0.0025823023]
+
+Epoch :  228
+cost :  [None, 0.0025723083]
+
+Epoch :  229
+cost :  [None, 0.0025623802]
+
+Epoch :  230
+cost :  [None, 0.0025525242]
+
+Epoch :  231
+cost :  [None, 0.0025427535]
+
+Epoch :  232
+cost :  [None, 0.0025330458]
+
+Epoch :  233
+cost :  [None, 0.0025234048]
+
+Epoch :  234
+cost :  [None, 0.0025138352]
+
+Epoch :  235
+cost :  [None, 0.0025043378]
+
+Epoch :  236
+cost :  [None, 0.0024948968]
+
+Epoch :  237
+cost :  [None, 0.0024855204]
+
+Epoch :  238
+cost :  [None, 0.0024762012]
+
+Epoch :  239
+cost :  [None, 0.002466944]
+
+Epoch :  240
+cost :  [None, 0.0024577563]
+
+Epoch :  241
+cost :  [None, 0.0024486168]
+
+Epoch :  242
+cost :  [None, 0.0024395324]
+
+Epoch :  243
+cost :  [None, 0.0024305042]
+
+Epoch :  244
+cost :  [None, 0.002421539]
+
+Epoch :  245
+cost :  [None, 0.0024126288]
+
+Epoch :  246
+cost :  [None, 0.0024037685]
+
+Epoch :  247
+cost :  [None, 0.0023949675]
+
+Epoch :  248
+cost :  [None, 0.0023862128]
+
+Epoch :  249
+cost :  [None, 0.0023775089]
+
+Epoch :  250
+cost :  [None, 0.0023688623]
+
+Epoch :  251
+cost :  [None, 0.0023602631]
+
+Epoch :  252
+cost :  [None, 0.0023517148]
+
+Epoch :  253
+cost :  [None, 0.0023432146]
+
+Epoch :  254
+cost :  [None, 0.0023347696]
+
+Epoch :  255
+cost :  [None, 0.0023263611]
+
+Epoch :  256
+cost :  [None, 0.0023180081]
+
+Epoch :  257
+cost :  [None, 0.002309707]
+
+Epoch :  258
+cost :  [None, 0.0023014485]
+
+Epoch :  259
+cost :  [None, 0.0022932352]
+
+Epoch :  260
+cost :  [None, 0.0022850637]
+
+Epoch :  261
+cost :  [None, 0.002276944]
+
+Epoch :  262
+cost :  [None, 0.0022688673]
+
+Epoch :  263
+cost :  [None, 0.0022608291]
+
+Epoch :  264
+cost :  [None, 0.0022528435]
+
+Epoch :  265
+cost :  [None, 0.0022449077]
+
+Epoch :  266
+cost :  [None, 0.0022370052]
+
+Epoch :  267
+cost :  [None, 0.002229145]
+
+Epoch :  268
+cost :  [None, 0.0022213291]
+
+Epoch :  269
+cost :  [None, 0.0022135642]
+
+Epoch :  270
+cost :  [None, 0.0022058296]
+
+Epoch :  271
+cost :  [None, 0.002198145]
+
+Epoch :  272
+cost :  [None, 0.0021904937]
+
+Epoch :  273
+cost :  [None, 0.002182893]
+
+Epoch :  274
+cost :  [None, 0.0021753309]
+
+Epoch :  275
+cost :  [None, 0.0021678042]
+
+Epoch :  276
+cost :  [None, 0.0021603273]
+
+Epoch :  277
+cost :  [None, 0.0021528788]
+
+Epoch :  278
+cost :  [None, 0.0021454811]
+
+Epoch :  279
+cost :  [None, 0.0021381201]
+
+Epoch :  280
+cost :  [None, 0.002130792]
+
+Epoch :  281
+cost :  [None, 0.0021235128]
+
+Epoch :  282
+cost :  [None, 0.0021162636]
+
+Epoch :  283
+cost :  [None, 0.0021090531]
+
+Epoch :  284
+cost :  [None, 0.0021018826]
+
+Epoch :  285
+cost :  [None, 0.0020947512]
+
+Epoch :  286
+cost :  [None, 0.0020876543]
+
+Epoch :  287
+cost :  [None, 0.0020805986]
+
+Epoch :  288
+cost :  [None, 0.0020735769]
+
+Epoch :  289
+cost :  [None, 0.0020665885]
+
+Epoch :  290
+cost :  [None, 0.0020596397]
+
+Epoch :  291
+cost :  [None, 0.0020527304]
+
+Epoch :  292
+cost :  [None, 0.0020458496]
+
+Epoch :  293
+cost :  [None, 0.0020390111]
+
+Epoch :  294
+cost :  [None, 0.0020322038]
+
+Epoch :  295
+cost :  [None, 0.0020254343]
+
+Epoch :  296
+cost :  [None, 0.0020187018]
+
+Epoch :  297
+cost :  [None, 0.0020120023]
+
+Epoch :  298
+cost :  [None, 0.0020053389]
+
+Epoch :  299
+cost :  [None, 0.0019987084]
+
+Training complete!
+95.9818265438

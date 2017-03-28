@@ -41,7 +41,7 @@ def loadData(full_fname, fs_Hz):
     arry = []
     target = []
     fname_data = full_fname
-    #counter = 0
+    counter = 0
 
     with open(fname_data) as data_file:
         while True:
@@ -52,17 +52,19 @@ def loadData(full_fname, fs_Hz):
             arr = line.split()
             # if arr[-1] == "7.0000000e+000":
             #     continue
-            #counter += 1
-
+            counter += 1
+            # if counter == 1:
+            #     for x in range(len(arr)):
+            #         print arr[x]
             for i in range(len(laplace_array)):
                 one = laplace_array[i][0]
-                # two = laplace_array[i][1]
-                # three = laplace_array[i][2]
-                # four = laplace_array[i][3]
-                # five = laplace_array[i][4]
-                temp = float(arr[one])
+                two = laplace_array[i][1]
+                three = laplace_array[i][2]
+                four = laplace_array[i][3]
+                five = laplace_array[i][4]
+                # temp = float(arr[i])
                 
-                #temp = 4*float(arr[one])-float(arr[two])-float(arr[three])-float(arr[four])-float(arr[five]) 
+                temp = 5*float(arr[one])-float(arr[two])-float(arr[three])-float(arr[four])-float(arr[five]) 
                 arry.append(temp)
             
             data.append(arry)
@@ -76,7 +78,7 @@ def loadData(full_fname, fs_Hz):
     return data,target
     #data = np.transpose(data[0:512])
 
-def butter_bandpass_filter(data, highcut, fs_Hz, passlh, order=5):
+def butter_bandpass_filter(data,lowcut, highcut, fs_Hz, passlh, order=5):
     # hp_cutoff_Hz = 1.0
     # b, a = signal.butter(2, hp_cutoff_Hz/(fs_Hz / 2.0), 'highpass')  # define the filter
     # f_eeg_data_uV = signal.lfilter(b, a, data, 0) # apply along the zeroeth dimension
@@ -84,7 +86,8 @@ def butter_bandpass_filter(data, highcut, fs_Hz, passlh, order=5):
 
     nyq = 0.5 * fs_Hz
     high = highcut / nyq
-    b, a = signal.butter(order, high, btype=passlh)
+    low = lowcut/nyq
+    b, a = signal.butter(order,[low, high], btype=passlh)
     y = signal.lfilter(b, a, data)
     return y
 
